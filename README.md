@@ -15,5 +15,6 @@ From the perspective of the user:
 From the perspective of the developer:
 
 - As a beginner developer, I want to practice mobile-first, responsive design
-- As a beginner developer, I want to practice basic HTML
-- As a beginner developer, I want to practice basic CSS
+- As a beginner developer, I want to practice HTML to develop my skills
+- As a beginner developer, I want to practice CSS to develop my skills
+

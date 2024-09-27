@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: px;
+    padding: px;
+}
+
+article {
+    text-align: center;
+}
+
+.class1 {
+    /* padding: ;
+    background-color: ;
+    border: ;
+    font-size: ; */
+}
+
+.class2 {
+    /* padding: ;
+    background-color: ;
+    border: ;
+    font-size: ; */
+}
+
+.class3 {
+    /* padding: ;
+    background-color: ;
+    border: ;
+    font-size: ; */
+}
+
+.class4 {
+    /* padding: ;
+    background-color: ;
+    border: ;
+    font-size: ; */
+}
+
+.class5 {
+    /* padding: ;
+    background-color: ;
+    border: ;
+    font-size: ; */
+}
+
+.class6 {
+    /* padding: ;
+    background-color: ;
+    border: ;
+    font-size: ; */
+}
+
+.class7 {
+    /* padding: ;
+    background-color: ;
+    border: ;
+    font-size: ; */
+}
+
+.class8 {
+    /* padding: ;
+    background-color: ;
+    border: ;
+    font-size: ; */
+}
+
+footer {
+     /* padding: ;
+    background-color: ;
+    border: ; */
+}
+

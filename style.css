@@ -31,17 +31,8 @@ article {
 }
 
 .class1:hover {
-    padding: 5px;
-    background:
-        linear-gradient(red, transparent),
-        linear-gradient(to top left, lime, transparent),
-        linear-gradient(to top right, blue, transparent);
-    background-blend-mode: screen;
-    border-radius:1%;
-    font-size: 1rem;
-    font-weight: bold;
     overflow: auto;
-    animation: gradient 5s ease infinite;
+    animation: gradient 5s infinite;
     background-size: 200% 100%;
     color: #ffffff;
 }
@@ -66,17 +57,23 @@ article {
     background-size: cover;
     filter: grayscale(1);
     color: #ffffff;
+    transition: filter 1.5s ease;
 }
 
 .class2:hover {
-    padding: 5px;
-    font-size: 1rem;
-    font-weight: normal;
-    background-image: url(https://images.theconversation.com/files/223729/original/file-20180619-126566-1jxjod2.jpg?ixlib=rb-4.1.0&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip);
-    background-size: cover;
-    filter: none;
-    color: #000;
+    filter: grayscale(0);
+    transition-delay: 2.5s;
 }
+
+.class2 p {
+    transition: opacity 0s;
+}
+
+.class2:hover p {
+    opacity: 0;
+    transition: opacity 3s;
+}
+
 
 .class3 {
     padding: 5px;

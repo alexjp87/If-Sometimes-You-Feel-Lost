@@ -30,6 +30,34 @@ article {
     font-weight: bold;
 }
 
+.class1:hover {
+    padding: 5px;
+    background:
+        linear-gradient(red, transparent),
+        linear-gradient(to top left, lime, transparent),
+        linear-gradient(to top right, blue, transparent);
+    background-blend-mode: screen;
+    border-radius:1%;
+    font-size: 1rem;
+    font-weight: bold;
+    overflow: auto;
+    animation: gradient 5s ease infinite;
+    background-size: 200% 100%;
+    color: #ffffff;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
 .class2 {
     padding: 5px;
     background-color: red;

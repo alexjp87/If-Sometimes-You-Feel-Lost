@@ -2,73 +2,81 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #161b24;
 }
 
 section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: px;
-    padding: px;
+    gap: 0.8em;
+    padding: 1em;
 }
 
 article {
     text-align: center;
+    height: 25em;
+    line-height: 20em;
 }
 
 .class1 {
-    /* padding: ;
-    background-color: ;
-    border: ;
-    font-size: ; */
+    padding: 5px;
+    background:
+        linear-gradient(red, transparent),
+        linear-gradient(to top left, lime, transparent),
+        linear-gradient(to top right, blue, transparent);
+    background-blend-mode: screen;
+    border-radius:1%;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 .class2 {
-    /* padding: ;
-    background-color: ;
-    border: ;
-    font-size: ; */
+    padding: 5px;
+    background-color: red;
+    border: solid 2px green;
+    font-size: 1rem;
 }
 
 .class3 {
-    /* padding: ;
-    background-color: ;
-    border: ;
-    font-size: ; */
+    padding: 5px;
+    background-color: blue;
+    border: solid 2px yellow;
+    font-size: 1rem;
 }
 
 .class4 {
-    /* padding: ;
-    background-color: ;
-    border: ;
-    font-size: ; */
+    padding: 5px;
+    background-color: red;
+    border: solid 2px green;
+    font-size: 1rem;
 }
 
 .class5 {
-    /* padding: ;
-    background-color: ;
-    border: ;
-    font-size: ; */
+    padding: 5px;
+    background-color: blue;
+    border: solid 2px yellow;
+    font-size: 1rem;
 }
 
 .class6 {
-    /* padding: ;
-    background-color: ;
-    border: ;
-    font-size: ; */
+    padding: 5px;
+    background-color: red;
+    border: solid 2px green;
+    font-size: 1rem;
 }
 
 .class7 {
-    /* padding: ;
-    background-color: ;
-    border: ;
-    font-size: ; */
+    padding: 5px;
+    background-color: blue;
+    border: solid 2px yellow;
+    font-size: 1rem;
 }
 
 .class8 {
-    /* padding: ;
-    background-color: ;
-    border: ;
-    font-size: ; */
+    padding: 5px;
+    background-color: red;
+    border: solid 2px green;
+    font-size: 1rem;
 }
 
 footer {

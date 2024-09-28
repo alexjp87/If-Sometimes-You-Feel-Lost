@@ -15,7 +15,6 @@ section {
 article {
     text-align: center;
     height: 28em;
-    /* line-height: 4em; */
 }
 
 .class1 {
@@ -58,13 +57,13 @@ article {
         linear-gradient(to top left, #c33764, #1d2671),
         linear-gradient(to top right, #1d1f1e, transparent);
     background-blend-mode: screen;
-    border-radius:12.5%;
+    border-radius:1%;
     font-size: 1rem;
     font-weight: bold;
     line-height: 4rem;
     color: #fff;
     opacity: 1;
-    transition: opacity 7s;
+    transition: opacity 5s;
 }
 
 .class2:hover {
@@ -93,7 +92,7 @@ article {
 }
 
 .class3:hover {
-    animation: curve-edges 2.5s infinite;
+    animation: breathe 2.5s infinite;
     font-weight: 100;
 }
 
@@ -102,7 +101,7 @@ article {
     transition: transform 3s ease;
 }
 
-@keyframes curve-edges {
+@keyframes breathe {
     0% {
         border-radius: 25%;
     }
@@ -181,10 +180,42 @@ article {
 
 .class6 {
     padding: 5px;
-    background-color: red;
-    border: solid 2px green;
+    border: solid 0.5rem #fff;
+    border-radius: 40%;
+    transition: border-radius 3s;
     font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    line-height: 8rem;
+    color: #161b24;
 }
+
+.class6:hover {
+    box-shadow: 0 0 1rem 1rem #fff;
+    border-radius: 1%;
+    transition: border-radius 3.5s;
+    transition-delay: 2.75s;
+}
+
+.class6:hover p:nth-child(1) {
+    color: #fff;
+    transition: color 1.5s;
+}
+
+.class6:hover p:nth-child(2) {
+    color: #fff;
+    transition: color 1.5s;
+    transition-delay: 1s;
+    font-size: 1.5rem;
+}
+
+.class6:hover p:nth-child(3) {
+    color: #fff;
+    transition: color 1.5s;
+    transition-delay: 2s;
+    font-size: 2rem;
+}
+
 
 .class7 {
     padding: 5px;
@@ -193,17 +224,23 @@ article {
     font-size: 1rem;
 }
 
-/* #article10:hover {
-    opacity: 0;
-    transition: opacity 2.5s;
-    transition-delay: 1s;
-} */
 .class8 {
     padding: 5px;
     background-color: red;
     border: solid 2px green;
     font-size: 1rem;
+    animation: mid-gradient 5s infinite;
+    background-size: 200% 100%;
+    background: linear-gradient(#fff, #000);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
+
+/* .class8:hover {
+    opacity: 0;
+    transition: opacity 2.5s;
+    transition-delay: 1s;
+} */
 
 footer {
      /* padding: ;

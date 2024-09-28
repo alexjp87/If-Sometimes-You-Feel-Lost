@@ -14,30 +14,30 @@ section {
 
 article {
     text-align: center;
-    height: 25em;
-    line-height: 20em;
+    height: 100vh;
+    line-height: 90vh;
 }
 
 .class1 {
     padding: 5px;
     background:
-        linear-gradient(red, transparent),
-        linear-gradient(to top left, lime, transparent),
-        linear-gradient(to top right, blue, transparent);
+        linear-gradient(#1fa2ff, transparent),
+        linear-gradient(to top left, #f12711, #f5af19),
+        linear-gradient(to top right, #a5ffcb, transparent);
     background-blend-mode: screen;
     border-radius:1%;
     font-size: 1rem;
     font-weight: bold;
+    overflow: auto;
+    animation: mid-gradient 5s infinite;
+    background-size: 200% 100%;
 }
 
 .class1:hover {
-    overflow: auto;
-    animation: gradient 5s infinite;
-    background-size: 200% 100%;
-    color: #ffffff;
+    color: #fff;
 }
 
-@keyframes gradient {
+@keyframes mid-gradient {
     0% {
         background-position: 0% 0%;
     }
@@ -51,49 +51,91 @@ article {
 
 .class2 {
     padding: 5px;
+    background:
+        linear-gradient(#1fa2ff, transparent),
+        linear-gradient(to top left, #c33764, #1d2671),
+        linear-gradient(to top right, #1d1f1e, transparent);
+    background-blend-mode: screen;
+    border-radius:1%;
     font-size: 1rem;
-    font-weight: bolder;
-    background-image: url(https://images.theconversation.com/files/223729/original/file-20180619-126566-1jxjod2.jpg?ixlib=rb-4.1.0&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip);
-    background-size: cover;
-    filter: grayscale(1);
-    color: #ffffff;
-    transition: filter 1.5s ease;
-}
-
-.class2:hover {
-    filter: grayscale(0);
-    transition-delay: 2.5s;
-}
-
-.class2 p {
-    transition: opacity 0s;
+    font-weight: bold;
+    color: #fff;
+    overflow: auto;
+    animation: mid-gradient 5s infinite;
+    background-size: 200% 100%;
 }
 
 .class2:hover p {
     opacity: 0;
-    transition: opacity 3s;
+    transition: opacity 1.5s;
 }
 
 
 .class3 {
     padding: 5px;
-    background-color: blue;
-    border: solid 2px yellow;
+    background:
+        linear-gradient(to top left, #f12711, #f5af19),
+        linear-gradient(to top right, #a5ffcb, transparent);
+    background-blend-mode: screen;
+    border-radius:1%;
     font-size: 1rem;
+    font-weight: bold;
+    overflow: auto;
+    animation: mid-gradient 5s infinite;
+    background-size: 200% 100%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+@keyframes curve-edges {
+    0% {
+        border-radius: 1%;
+    }
+    50% {
+        border-radius: 25%;
+    }
+    100% {
+        border-radius: 1%;
+    }
+}
+
+.class3:hover {
+    animation: curve-edges 2.5s infinite;
+    font-weight: 100;
 }
 
 .class4 {
     padding: 5px;
-    background-color: red;
-    border: solid 2px green;
+    background:
+        linear-gradient(to top left, #c33764, #1d2671),
+        linear-gradient(to top right, #1d1f1e, transparent);
+    background-blend-mode: screen;
+    border-radius:1%;
     font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    overflow: auto;
+    animation: mid-gradient 5s infinite;
+    background-size: 200% 100%;
 }
+
+.class4:hover {
+    filter: contrast(15);
+    filter: saturate(4);
+    color: #000;
+}
+
 
 .class5 {
     padding: 5px;
     background-color: blue;
     border: solid 2px yellow;
     font-size: 1rem;
+}
+
+.class5:hover {
+    /* filter: grayscale(100);
+    color: #000;
+    transition: filter 1.5s ease, color 1.5s ease; */
 }
 
 .class6 {
@@ -110,6 +152,11 @@ article {
     font-size: 1rem;
 }
 
+/* #article10:hover {
+    opacity: 0;
+    transition: opacity 2.5s;
+    transition-delay: 1s;
+} */
 .class8 {
     padding: 5px;
     background-color: red;

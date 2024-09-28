@@ -15,7 +15,7 @@ section {
 article {
     text-align: center;
     height: 28em;
-    line-height: 26em;
+    /* line-height: 4em; */
 }
 
 .class1 {
@@ -28,13 +28,14 @@ article {
     border-radius:1%;
     font-size: 1rem;
     font-weight: bold;
-    overflow: auto;
-    animation: mid-gradient 5s infinite;
-    background-size: 200% 100%;
+    line-height: 4rem;
 }
 
 .class1:hover {
     color: #fff;
+    overflow: auto;
+    animation: mid-gradient 2.5s infinite;
+    background-size: 200% 100%;
 }
 
 @keyframes mid-gradient {
@@ -49,6 +50,7 @@ article {
     }
 }
 
+
 .class2 {
     padding: 5px;
     background:
@@ -56,13 +58,19 @@ article {
         linear-gradient(to top left, #c33764, #1d2671),
         linear-gradient(to top right, #1d1f1e, transparent);
     background-blend-mode: screen;
-    border-radius:1%;
+    border-radius:12.5%;
     font-size: 1rem;
     font-weight: bold;
+    line-height: 4rem;
     color: #fff;
-    overflow: auto;
-    animation: mid-gradient 5s infinite;
-    background-size: 200% 100%;
+    opacity: 1;
+    transition: opacity 7s;
+}
+
+.class2:hover {
+    opacity: 0;
+    transition: opacity 1.5s;
+    transition-delay: 1s;
 }
 
 .class2:hover p {
@@ -77,25 +85,11 @@ article {
         linear-gradient(to top left, #f12711, #f5af19),
         linear-gradient(to top right, #a5ffcb, transparent);
     background-blend-mode: screen;
-    border-radius:1%;
+    border-radius:25%;
     font-size: 1rem;
     font-weight: bold;
-    overflow: auto;
-    animation: mid-gradient 5s infinite;
-    background-size: 200% 100%;
+    line-height: 2rem;
     font-family: 'Courier New', Courier, monospace;
-}
-
-@keyframes curve-edges {
-    0% {
-        border-radius: 1%;
-    }
-    50% {
-        border-radius: 25%;
-    }
-    100% {
-        border-radius: 1%;
-    }
 }
 
 .class3:hover {
@@ -103,40 +97,87 @@ article {
     font-weight: 100;
 }
 
+.class3:hover p {
+    transform: translateY(15em);
+    transition: transform 3s ease;
+}
+
+@keyframes curve-edges {
+    0% {
+        border-radius: 25%;
+    }
+    50% {
+        border-radius: 1%;
+    }
+    100% {
+        border-radius: 25%;
+    }
+}
+
+
 .class4 {
     padding: 5px;
-    background:
-        linear-gradient(to top left, #c33764, #1d2671),
-        linear-gradient(to top right, #1d1f1e, transparent);
-    background-blend-mode: screen;
-    border-radius:1%;
     font-size: 1rem;
-    font-weight: bold;
+    background-image: url(https://mfiles.alphacoders.com/100/1008760.png);
+    background-size: cover;
+    font-weight: bolder;
     color: #fff;
-    overflow: auto;
-    animation: mid-gradient 5s infinite;
-    background-size: 200% 100%;
+    line-height: 8rem;
+    border-radius: 0%;
+    transition: border-radius 5s ease;
 }
 
 .class4:hover {
-    filter: contrast(15);
-    filter: saturate(4);
-    color: #000;
+    filter: grayscale(100);
+    transition: filter 5s ease, color 1.5s ease, border-radius 5s ease-out;
+    border-radius: 35% 15%;
 }
 
 
 .class5 {
     padding: 5px;
-    background-color: blue;
-    border: solid 2px yellow;
+    background:
+        linear-gradient(to top left, #c33764, #1d2671),
+        linear-gradient(to top right, #1d1f1e, transparent);
+    background-blend-mode: screen;
+    border-radius: 3%;
     font-size: 1rem;
+    font-weight: bold;
+    line-height: 4rem;
 }
 
 .class5:hover {
-    /* filter: grayscale(100);
-    color: #000;
-    transition: filter 1.5s ease, color 1.5s ease; */
+    overflow: auto;
+    animation: mid-gradient 5s infinite;
+    background-size: 200% 100%;
+    filter: contrast(15);
+    filter: saturate(4);
 }
+
+.class5:hover p:nth-child(1) {
+    color: #fff;
+}
+.class5:hover p:nth-child(2) {
+    color: #fff;
+    transition: color;
+    transition-delay: 0.5s;
+}
+.class5:hover p:nth-child(3) {
+    color: #fff;
+    transition: color;
+    transition-delay: 1s;
+}
+.class5:hover p:nth-child(4) {
+    color: #fff;
+    transition: color;
+    transition-delay: 1.5s;
+}
+.class5:hover p:nth-child(5) {
+    color: #fff;
+    transition: color;
+    transition-delay: 2s;
+}
+
 
 .class6 {
     padding: 5px;

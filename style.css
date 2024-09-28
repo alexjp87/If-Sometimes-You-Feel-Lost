@@ -216,13 +216,46 @@ article {
     font-size: 2rem;
 }
 
-
-.class7 {
-    padding: 5px;
-    background-color: blue;
-    border: solid 2px yellow;
-    font-size: 1rem;
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    padding: 5px
 }
+
+.flip-card-inner {
+    border-radius: 12.5%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12.5%;
+  }
+
+  .flip-card-front {
+    background-image: url(https://wallpaper.forfun.com/fetch/e0/e0969d284a6e520bcd659dd968fa28f8.jpeg);
+    background-size: cover;
+  }
+
+  .flip-card-back {
+    background-image: url(https://i.pinimg.com/736x/eb/7b/10/eb7b10a9252c3d5efe912b6112654508.jpg);
+    background-size: cover;
+    color: #fff;
+    transform: rotateY(180deg);
+    line-height: 8rem;
+    font-weight: bolder;
+    font-size: 1rem;
+  }
+
 
 .class8 {
     padding: 5px;

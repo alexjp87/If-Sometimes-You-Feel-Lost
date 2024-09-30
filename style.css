@@ -297,7 +297,7 @@ article {
   }
 
 
-.class8 {
+.class8-container {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;

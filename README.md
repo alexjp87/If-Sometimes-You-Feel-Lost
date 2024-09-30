@@ -5,7 +5,7 @@
 # Project Goals
 The goal of this project is to build a responsive web page using HTML and CSS to practice the basics of CSS.
 
-The page will be developed using mobile-first design. 
+The page will be developed using mobile-first design.
 
 # User Stories
 From the perspective of the user:

@@ -314,10 +314,6 @@ article {
     align-items: center;
 }
 
-.letter .big-block .little-block {
-    position: relative;
-}
-
 .letter {
     padding: 1em;
     box-sizing: border-box;
@@ -419,7 +415,7 @@ article {
     grid-area: bb-12;
 }
 
-.big-block, .little-block {
+.big-block {
     transition: 1.5s cubic-bezier(.12,.71,0,1);
 }
 
@@ -440,9 +436,16 @@ article {
 .class8-container:hover .bb-11 { transform: translate(+5vw,-7vw); }
 .class8-container:hover .bb-12 { transform: translate(+3vw,-10vw); }
 
-.class8-container:hover .little-block {
-    background-color: #1fa2ff;
+.class8-container:hover .letter:nth-child(1) .little-block {
+    background-color: #ff1fb4;
 }
+.class8-container:hover .letter:nth-child(2) .little-block {
+    background-color: #ffb81f;
+}
+.class8-container:hover .letter:nth-child(3) .little-block {
+    background-color: #1fcbff;
+}
+
 
 footer {
      /* padding: ;

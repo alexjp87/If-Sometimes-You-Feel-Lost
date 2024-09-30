@@ -297,33 +297,155 @@ article {
   }
 
 
-.class8 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    /* padding: 1em; */
+.class8-container {
     box-sizing: border-box;
-    /* border: solid 2px green; */
     font-size: 1rem;
     background-size: 200% 100%;
-    background:
+    /* background: */
         linear-gradient(red, transparent),
         linear-gradient(to top left, lime, transparent),
         linear-gradient(to top right, blue, transparent);
     background-blend-mode: screen;
-    /* -webkit-text-fill-color: transparent; */
-    /* background-clip: text; */
-    color: #161b24;
-    font-size: 5em;
     animation: mid-gradient 3s infinite;
     background-size: 200% 100%;
     overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.class8:hover {
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.letter {
+    padding: 1em;
+    box-sizing: border-box;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: 
+        ". . bb-1 bb-2 . ."
+        ". bb-3 . . bb-4 ."
+        ". bb-5 bb-6 bb-7 bb-8 ."
+        ". bb-9 . . bb-10 ."
+        ". bb-11 . . bb-12 .";
+    align-items: center;
+    justify-items: center;
+    height: 30%;
+    width: 30%;
 }
+
+.letter:nth-child(2) {
+    grid-template-areas:
+        ". bb-1 . . bb-2 ."
+        ". bb-3 bb-4 . bb-5 ."
+        ". bb-6 . bb-7 bb-8 ."
+        ". bb-9 . . bb-10 ."
+        ". bb-11 . . bb-12 .";
+}
+
+.letter:nth-child(3) {
+    grid-template-areas:
+        ". bb-1 bb-2 bb-3 . ."
+        ". bb-4 . . bb-5 ."
+        ". bb-6 . . bb-7 ."
+        ". bb-8 . . bb-9 ."
+        ". bb-10 bb-11 bb-12 . .";
+}
+
+.big-block {
+	height: 45%; width: 75%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: 
+        "lb-1 lb-2"
+        "lb-3 lb-4";
+}
+
+.little-block {
+    background-color: #fff;
+}
+
+.lb1 { 
+    grid-area: lb-1;
+}
+.lb2 {
+    grid-area: lb-2;
+}
+.lb3 {
+    grid-area: lb-3;
+}
+.lb4 {
+    grid-area: lb-4;
+}
+
+.bb-1 {
+    grid-area: bb-1;
+}
+.bb-2 {
+    grid-area: bb-2;
+}
+.bb-3 {
+    grid-area: bb-3;
+}
+.bb-4 {
+    grid-area: bb-4;
+}
+.bb-5 {
+    grid-area: bb-5;
+}
+.bb-6 {
+    grid-area: bb-6;
+}
+.bb-7 {
+    grid-area: bb-7;
+}
+.bb-8 {
+    grid-area: bb-8;
+}
+.bb-9 {
+    grid-area: bb-9;
+}
+.bb-10 {
+    grid-area: bb-10;
+}
+.bb-11 {
+    grid-area: bb-11;
+}
+.bb-12 {
+    grid-area: bb-12;
+}
+
+.big-block {
+    transition: 1.5s cubic-bezier(.12,.71,0,1);
+}
+
+.class8-container:hover .lb-1 { transform: translate(-1vw,-4vw); }
+.class8-container:hover .lb-2 { transform: translate(-2vw,+3vw); }
+.class8-container:hover .lb-3 { transform: translate(+3vw,-2vw); }
+.class8-container:hover .lb-4 { transform: translate(+4vw,+1vw); }
+.class8-container:hover .bb-1 { transform: translate(-7vw,-7vw); }
+.class8-container:hover .bb-2 { transform: translate(-8vw,-6vw); }
+.class8-container:hover .bb-3 { transform: translate(-9vw,-4vw); }
+.class8-container:hover .bb-4 { transform: translate(-10vw,+3vw); }
+.class8-container:hover .bb-5 { transform: translate(+6vw,+5vw); }
+.class8-container:hover .bb-6 { transform: translate(+6vw,+7vw); }
+.class8-container:hover .bb-7 { transform: translate(+4vw,+6vw); }
+.class8-container:hover .bb-8 { transform: translate(+5vw,+5vw); }
+.class8-container:hover .bb-9 { transform: translate(+7vw,+3vw); }
+.class8-container:hover .bb-10 { transform: translate(+8vw,-4vw); }
+.class8-container:hover .bb-11 { transform: translate(+5vw,-7vw); }
+.class8-container:hover .bb-12 { transform: translate(+3vw,-10vw); }
+
+.class8-container:hover .letter:nth-child(1) .little-block {
+    background-color: #ff1fb4;
+}
+.class8-container:hover .letter:nth-child(2) .little-block {
+    background-color: #ffb81f;
+}
+.class8-container:hover .letter:nth-child(3) .little-block {
+    background-color: #1fcbff;
+}
+
 
 footer {
      /* padding: ;

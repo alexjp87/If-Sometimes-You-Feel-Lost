@@ -331,6 +331,35 @@ article {
     width: 30%;
 }
 
+.letter:nth-child(2) {
+    grid-template-areas:
+        ". bb-1 . . bb-2 ."
+        ". bb-3 bb-4 . bb-5 ."
+        ". bb-6 . bb-7 bb-8 ."
+        ". bb-9 . . bb-10 ."
+        ". bb-11 . . bb-12 .";
+}
+
+/* .letter {
+    padding: 1em;
+    border: solid #000;
+    box-sizing: border-box;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: 
+        ". . bb-1 bb-2 . ."
+        ". bb-3 . . bb-4 ."
+        ". bb-5 bb-6 bb-7 bb-8 ."
+        ". bb-9 . . bb-10 ."
+        ". bb-11 . . bb-12 .";
+    align-items: center;
+    justify-items: center;
+    height: 30%;
+    width: 30%;
+} */
+
 .big-block {
     background-color: #000;
 	height: 45%; width: 75%;

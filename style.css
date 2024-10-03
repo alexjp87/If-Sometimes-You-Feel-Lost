@@ -158,6 +158,11 @@ article {
 }
 
 
+/* 
+
+*/
+
+
 .class3 {
     display: flex;
     flex-direction: column;
@@ -524,22 +529,22 @@ article {
     transition: 1.5s cubic-bezier(.12,.71,0,1);
 }
 
-.class8-container:hover .lb-1 { transform: translate(-0.5rem,-2rem); }
-.class8-container:hover .lb-2 { transform: translate(-1rem,+1.5rem); }
-.class8-container:hover .lb-3 { transform: translate(+1.5rem,-1rem); }
-.class8-container:hover .lb-4 { transform: translate(+2rem,+0.5rem); }
-.class8-container:hover .bb-1 { transform: translate(-3.5rem,-3.5rem); }
-.class8-container:hover .bb-2 { transform: translate(-4rem,-3rem); }
-.class8-container:hover .bb-3 { transform: translate(-4.5rem,-2rem); }
-.class8-container:hover .bb-4 { transform: translate(-5rem,+1.5rem); }
-.class8-container:hover .bb-5 { transform: translate(+2rem,+2.5rem); }
-.class8-container:hover .bb-6 { transform: translate(+3rem,+3.5rem); }
-.class8-container:hover .bb-7 { transform: translate(+2rem,+2rem); }
-.class8-container:hover .bb-8 { transform: translate(+2.5rem,+2.5rem); }
-.class8-container:hover .bb-9 { transform: translate(+2.5rem,+1.5rem); }
-.class8-container:hover .bb-10 { transform: translate(+4rem,-2rem); }
-.class8-container:hover .bb-11 { transform: translate(+2.5rem,-3.5rem); }
-.class8-container:hover .bb-12 { transform: translate(+1.5rem,-5rem); }
+.letter:hover .lb-1 { transform: translate(-0.5rem,-2rem); }
+.letter:hover .lb-2 { transform: translate(-1rem,+1.5rem); }
+.letter:hover .lb-3 { transform: translate(+1.5rem,-1rem); }
+.letter:hover .lb-4 { transform: translate(+2rem,+0.5rem); }
+.letter:hover .bb-1 { transform: translate(-3.5rem,-3.5rem); }
+.letter:hover .bb-2 { transform: translate(-4rem,-3rem); }
+.letter:hover .bb-3 { transform: translate(-4.5rem,-2rem); }
+.letter:hover .bb-4 { transform: translate(-5rem,+1.5rem); }
+.letter:hover .bb-5 { transform: translate(+2rem,+2.5rem); }
+.letter:hover .bb-6 { transform: translate(+3rem,+3.5rem); }
+.letter:hover .bb-7 { transform: translate(+2rem,+2rem); }
+.letter:hover .bb-8 { transform: translate(+2.5rem,+2.5rem); }
+.letter:hover .bb-9 { transform: translate(+2.5rem,+1.5rem); }
+.letter:hover .bb-10 { transform: translate(+4rem,-2rem); }
+.letter:hover .bb-11 { transform: translate(+2.5rem,-3.5rem); }
+.letter:hover .bb-12 { transform: translate(+1.5rem,-5rem); }
 
 .class8-container:hover .letter:nth-child(1) .little-block {
     background-color: #ff1fb4;

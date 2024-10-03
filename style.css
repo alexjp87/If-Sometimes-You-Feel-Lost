@@ -1,67 +1,129 @@
+/* Baseline <body> styling */
 body {
+    /* set font */
     font-family: Arial, sans-serif;
+    /* remove any initial margin [margins are used to create space around elements, outside of any defined borders] */
     margin: 0;
+    /* remove any intital padding [padding is used to create space around an element's content, inside of any defined borders] */
     padding: 0;
+    /* set background colour */
     background-color: #161b24;
 }
 
+
+/* 
+
+*/
+
+
+/* Main parent container styling */
 section {
+    /* initialise grid */
     display: grid;
+    /* create responsive grid (maximum 2 columns, minimum column width 320px, share remaining space evenly between columns (i.e. respond to screen size)) */
     grid-template-columns: repeat(2, minmax(320px, 1fr));
+    /* space out grid elements */
     gap: 2em;
+    /* create space between elements and top/sides of screen */
     padding: 2em;
+    /* centre text in elements */
+    text-align: center;
 }
 
+/* force 1 column layout if screen width < 640px (to prevent overflow (because min column width 320px SEE LINE 23)) [the @media rule is used in media queries to apply different styles for different media types/devices. Media queries can be used to check many things, such as: width and height of the viewport, width and height of the device, orientation (is the tablet/phone in landscape or portrait mode?), resolution] */
 @media (max-width: 640px) {
     section {
         grid-template-columns: 1fr;
     }
 }
 
+
+/* 
+
+*/
+
+
+/* Set default <article> height to 90% of viewport */
 article {
-    text-align: center;
     height: 90vh;
 }
 
-.class1 {
+
+/* 
+
+*/
+
+
+/* 1. GLOW PINK */
+
+/* Main container */
+.glow-pink-container {
+    /* initialise flex container */
     display: flex;
+    /* order child elements vertically */
     flex-direction: column;
+    /* space elements evenly */
     justify-content: space-between;
+    /* create space between card edges and text (specifically top and bottom edges) */
     padding: 2em;
+    /* include any padding and borders in total dimensions (width and height) of element */
     box-sizing: border-box;
+    /* create 3 different coloured background layers [CSS gradients let you display smooth transitions between two or more specified colours: linear gradient = goes down/up/left/right/diagonally] */
     background:
         linear-gradient(#1fa2ff, transparent),
         linear-gradient(to top left, #f12711, #f5af19),
         linear-gradient(to top right, #a5ffcb, transparent);
+    /* blend background layers together */
     background-blend-mode: screen;
+    /* slightly curve element edges */
     border-radius:1%;
+    /* set font size */
     font-size: 1rem;
+    /*  set character (text) thickness */
     font-weight: bold;
-    overflow: auto;
-    animation: mid-gradient 2.5s infinite;
+    /* call animation SEE LINE 108 (params = name, duration, number of iterations */
+    animation: glow-pink 2.5s infinite;
+    /* set background size to twice width of element (facilitates animation - creates glowing effect by moving background position repeatedly) */
     background-size: 200% 100%;
+    /* set initial text colour */
     color: #000;
 }
 
-.class1:hover {
+/* Set text colour to white on hover */
+.glow-pink-container:hover {
     color: #fff;
 }
 
-.class1:not(:hover) {
-    transition: color 2s;
+/* Set text to disappear over 5s duration on hover*/
+.glow-pink-container:hover p {
+    opacity: 0;
+    transition: opacity 5s;
+}
+/* transition text opacity back to 1 over 5s duration off hover */
+.glow-pink-container:not(:hover) p {
+    transition: opacity 5s;
 }
 
-@keyframes mid-gradient {
+/* Define 'glow-pink' animation [the @keyframes rule specifies animation code - animations are created by gradually changing from one set of CSS styles to another] */
+@keyframes glow-pink {
+    /* At 0% stage, background is in top left corner (1st value = horizontal position starting from left, 2nd value = vertical position starting from top) */
     0% {
         background-position: 0% 0%;
     }
+    /* By 50% stage of animation, background has moved to bottom right corner */
     50% {
         background-position: 100% 100%;
     }
+    /* By end of animation, background has moved back to top left corner */
     100% {
         background-position: 0% 0%;
     }
 }
+
+
+/* 
+
+*/
 
 
 .class2 {
@@ -69,6 +131,7 @@ article {
     flex-direction: column;
     justify-content: space-between;
     padding: 2em;
+    margin: 0 4em;
     box-sizing: border-box;
     background:
         linear-gradient(#1fa2ff, transparent),
@@ -286,6 +349,7 @@ article {
 
   /* Front and back of card joint styling*/
   .flip-card-front, .flip-card-back {
+    /* layer card front and back sides on top of each other (absolute position removes elements from the document flow, allowing overlap) */
     position: absolute;
     /* Match width and height of parent (.flip-card-inner) */
     width: 100%;
@@ -311,9 +375,9 @@ article {
     flex-direction: column;
     /* space text evenly */
     justify-content: space-between;
-    /* create space between card edges and text */
+    /* create space between card edges and text (specifically top and bottom edges) */
     padding: 3em;
-    /* include padding and border in total dimensions (width and height) of element */
+    /* include any padding and border in total dimensions of element */
     box-sizing: border-box;
     /* back of card image */
     background-image: url(https://i.pinimg.com/736x/eb/7b/10/eb7b10a9252c3d5efe912b6112654508.jpg);
@@ -321,7 +385,7 @@ article {
     color: #fff;
     /* set back or card to initial 180deg rotation (i.e. back side starts facing away) */
     transform: rotateY(180deg);
-    /* set character (text) thickness */
+    /* set character thickness */
     font-weight: bolder;
     /* set font-size */
     font-size: 1rem;
@@ -348,7 +412,7 @@ article {
     background-blend-mode: screen;
     animation: mid-gradient 3s infinite;
     background-size: 200% 100%;
-    overflow: auto;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -486,7 +550,9 @@ article {
 .class8-container:hover .letter:nth-child(3) .little-block {
     background-color: #1fcbff;
 }
-
+.class8-container:not(:hover) .letter .little-block {
+    transition: background-color 2s;
+}
 
 footer {
      /* padding: ;

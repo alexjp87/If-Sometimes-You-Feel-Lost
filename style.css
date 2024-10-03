@@ -252,55 +252,95 @@ article {
 }
 
 
-.flip-card {
+/* 
+
+ */
+
+
+/* 7. FLIP CARD */
+
+/* Main container: */
+.flip-card-container {
+    /* make transparent */
     background-color: transparent;
+    /* set span of 3d rotation [the perspective property is used to give a 3D-positioned element some perspective - a lower value will result in a more intensive 3D effect than a higher value] */
     perspective: 1000px;
+    /* reduce element width */
     padding: 0.2em;
 }
 
-.flip-card-inner {
-    border-radius: 12.5%;
+/* Inner container */
+.flip-card-inner-container {
+    /* match height of parent (.flip-card) */
     height: 100%;
+    /* set card rotation speed (transformation takes 0.8s) */
     transition: transform 0.8s;
+    /* render children (.flip-card-front, .flip-card-back) correctly whilst card rotates [the transform-style property specifies how nested elements are rendered in 3D space] */
     transform-style: preserve-3d;
   }
 
-  .flip-card:hover .flip-card-inner {
+  /* When main container is hovered over, rotate inner container by 180 degrees on Y axis */
+  .flip-card-container:hover .flip-card-inner-container {
     transform: rotateY(180deg);
   }
 
+  /* Front and back of card joint styling*/
   .flip-card-front, .flip-card-back {
     position: absolute;
+    /* Match width and height of parent (.flip-card-inner) */
     width: 100%;
     height: 100%;
+    /* ensure only 1 side of card visible at any one time during rotation */
     backface-visibility: hidden;
+    /* curve card edges */
     border-radius: 12.5%;
+    /* scale image down to fit background */
+    background-size: cover;
   }
 
+  /* Front of card image */
   .flip-card-front {
     background-image: url(https://wallpaper.forfun.com/fetch/e0/e0969d284a6e520bcd659dd968fa28f8.jpeg);
-    background-size: cover;
   }
 
+  /* Back of card */
   .flip-card-back {
+    /* initialise flex container */
     display: flex;
+    /* order child elements (text) vertically */
     flex-direction: column;
+    /* space text evenly */
     justify-content: space-between;
+    /* create space between card edges and text */
     padding: 3em;
+    /* include padding and border in total dimensions (width and height) of element */
     box-sizing: border-box;
+    /* back of card image */
     background-image: url(https://i.pinimg.com/736x/eb/7b/10/eb7b10a9252c3d5efe912b6112654508.jpg);
-    background-size: cover;
+    /* text color = white */
     color: #fff;
+    /* set back or card to initial 180deg rotation (i.e. back side starts facing away) */
     transform: rotateY(180deg);
+    /* set character (text) thickness */
     font-weight: bolder;
+    /* set font-size */
     font-size: 1rem;
   }
+
+
+/* 
+
+*/
+
+
+/* 8.  */
 
 
 .class8-container {
     box-sizing: border-box;
     font-size: 1rem;
     background-size: 200% 100%;
+    padding: 0 2rem;
     /* background: */
         linear-gradient(red, transparent),
         linear-gradient(to top left, lime, transparent),

@@ -7,7 +7,7 @@ body {
 
 section {
     display: grid;
-    grid-template-columns: repeat(3, minmax(320px, 1fr));
+    grid-template-columns: repeat(2, minmax(320px, 1fr));
     gap: 2em;
     padding: 2em;
 }
@@ -352,13 +352,14 @@ article {
 }
 
 .big-block {
-	height: 45%; width: 75%;
+	height: 45%; width: 45%;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(2,1fr);
     grid-template-areas: 
         "lb-1 lb-2"
         "lb-3 lb-4";
+    padding: 0.5em;
 }
 
 .little-block {
@@ -419,22 +420,22 @@ article {
     transition: 1.5s cubic-bezier(.12,.71,0,1);
 }
 
-.class8-container:hover .lb-1 { transform: translate(-1vw,-4vw); }
-.class8-container:hover .lb-2 { transform: translate(-2vw,+3vw); }
-.class8-container:hover .lb-3 { transform: translate(+3vw,-2vw); }
-.class8-container:hover .lb-4 { transform: translate(+4vw,+1vw); }
-.class8-container:hover .bb-1 { transform: translate(-7vw,-7vw); }
-.class8-container:hover .bb-2 { transform: translate(-8vw,-6vw); }
-.class8-container:hover .bb-3 { transform: translate(-9vw,-4vw); }
-.class8-container:hover .bb-4 { transform: translate(-10vw,+3vw); }
-.class8-container:hover .bb-5 { transform: translate(+6vw,+5vw); }
-.class8-container:hover .bb-6 { transform: translate(+6vw,+7vw); }
-.class8-container:hover .bb-7 { transform: translate(+4vw,+6vw); }
-.class8-container:hover .bb-8 { transform: translate(+5vw,+5vw); }
-.class8-container:hover .bb-9 { transform: translate(+7vw,+3vw); }
-.class8-container:hover .bb-10 { transform: translate(+8vw,-4vw); }
-.class8-container:hover .bb-11 { transform: translate(+5vw,-7vw); }
-.class8-container:hover .bb-12 { transform: translate(+3vw,-10vw); }
+.class8-container:hover .lb-1 { transform: translate(-0.5rem,-2rem); }
+.class8-container:hover .lb-2 { transform: translate(-1rem,+1.5rem); }
+.class8-container:hover .lb-3 { transform: translate(+1.5rem,-1rem); }
+.class8-container:hover .lb-4 { transform: translate(+2rem,+0.5rem); }
+.class8-container:hover .bb-1 { transform: translate(-3.5rem,-3.5rem); }
+.class8-container:hover .bb-2 { transform: translate(-4rem,-3rem); }
+.class8-container:hover .bb-3 { transform: translate(-4.5rem,-2rem); }
+.class8-container:hover .bb-4 { transform: translate(-5rem,+1.5rem); }
+.class8-container:hover .bb-5 { transform: translate(+2rem,+2.5rem); }
+.class8-container:hover .bb-6 { transform: translate(+3rem,+3.5rem); }
+.class8-container:hover .bb-7 { transform: translate(+2rem,+2rem); }
+.class8-container:hover .bb-8 { transform: translate(+2.5rem,+2.5rem); }
+.class8-container:hover .bb-9 { transform: translate(+2.5rem,+1.5rem); }
+.class8-container:hover .bb-10 { transform: translate(+4rem,-2rem); }
+.class8-container:hover .bb-11 { transform: translate(+2.5rem,-3.5rem); }
+.class8-container:hover .bb-12 { transform: translate(+1.5rem,-5rem); }
 
 .class8-container:hover .letter:nth-child(1) .little-block {
     background-color: #ff1fb4;

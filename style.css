@@ -521,17 +521,17 @@ article {
 .letter:hover .bb-11 { transform: translate(+2.5rem,-3.5rem); }
 .letter:hover .bb-12 { transform: translate(+1.5rem,-5rem); }
 
-.class8-container:hover .letter:nth-child(1) .little-block {
+.letter:nth-child(1):hover .little-block {
     background-color: #ff1fb4;
 }
-.class8-container:hover .letter:nth-child(2) .little-block {
+.letter:nth-child(2):hover .little-block {
     background-color: #ffb81f;
 }
-.class8-container:hover .letter:nth-child(3) .little-block {
+.letter:nth-child(3):hover .little-block {
     background-color: #1fcbff;
 }
-.class8-container:not(:hover) .letter .little-block {
-    transition: background-color 2s;
+.letter:not(:hover) .little-block {
+    transition: background-color 1s;
 }
 
 .and-letter-a {
@@ -585,6 +585,31 @@ article {
     ". . bb-9 bb-10 . .";
 }
 
+.are-letter-a {
+    grid-template-areas: 
+        ". . bb-1 bb-2 . ."
+        ". bb-3 . . bb-4 ."
+        ". bb-5 bb-6 bb-7 bb-8 ."
+        ". bb-9 . . bb-10 ."
+        ". bb-11 . . bb-12 .";
+}
+.are-letter-r {
+    grid-template-areas:
+    ". . bb-1 bb-2 . ."
+    ". bb-3 . . bb-4 ."
+    ". bb-5 . . bb-6 ."
+    ". bb-7 bb-8 bb-9 . ."
+    ". bb-10 . . bb-11 .";
+}
+.are-letter-e {
+    grid-template-areas:
+    ". bb-1 bb-2 bb-3 bb-4 ."
+    ". bb-5 . . . ."
+    ". bb-6 bb-7 . . ."
+    ". bb-8 . . . ."
+    ". bb-9 bb-10 bb-11 bb-12 ."
+    ;
+}
 
 
 footer {

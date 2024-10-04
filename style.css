@@ -318,10 +318,10 @@ article {
 */
 
 
-/* 6. */
+/* 6. PORTAL */
 
 /* Main container */
-.class6 {
+.portal-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -329,37 +329,46 @@ article {
     box-sizing: border-box;
     border: solid 0.5rem #fff;
     border-radius: 40%;
+    /* Return border-radius and box-shadow blur and spread properties to original values over (border-radius 1.5s, box-shadow 4s) and moving faster in middle of transition */
     box-shadow: 0 0 0.5rem 0.6rem #fff;
-    transition: border-radius 1.5s ease, box-shadow 4s ease;
+    transition: border-radius 1.5s, box-shadow 4s;
     font-size: 1rem;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bolder;
+    /* 'Hide' element text */
     color: #161b24;
 }
 
-.class6:hover {
+/* Increase box-shadow blur and spread values instantly and reduce border-radius value over 2.5s duration after 2s delay on hover */
+.portal-container:hover {
     box-shadow: 0 0 1rem 1rem #fff;
     border-radius: 1%;
     transition: border-radius 2.5s 2s;
 }
 
-.class6:hover p:nth-child(1) {
+/* Change text colour to white, increase font-size (siblings 2+3) over 1.5s with increasing transition-delay when parent container is hovered (i.e. create reveal effect) */
+.portal-container:hover p:nth-child(1) {
     color: #fff;
     transition: color 1.5s;
 }
-
-.class6:hover p:nth-child(2) {
+.portal-container:hover p:nth-child(2) {
     color: #fff;
     transition: color 1.5s;
     transition-delay: 0.74s;
     font-size: 1.5rem;
 }
-
-.class6:hover p:nth-child(3) {
+.portal-container:hover p:nth-child(3) {
     color: #fff;
     transition: color 1.5s;
     transition-delay: 1.5s;
     font-size: 2rem;
+}
+
+/* Return text colour to original value over 1.5s when parent container is no longer hovered (font-size returns over 6s to maintain adjusted font-sizes until after faded out) */
+.portal-container:not(:hover) p {
+    color: #161b24;
+    font-size: 1rem;
+    transition: color 1.5s, font-size 6s;
 }
 
 
@@ -375,7 +384,7 @@ article {
     /* make transparent */
     background-color: transparent;
     /* set span of 3d rotation [the perspective property is used to give a 3D-positioned element some perspective - a lower value will result in a more intensive 3D effect than a higher value] */
-    perspective: 1200px;
+    perspective: 1000px;
     /* reduce element width */
     padding: 0.2em;
 }
@@ -392,7 +401,7 @@ article {
 
   /* When main container is hovered over, rotate inner container by 180 degrees on Y axis */
   .flip-card-container:hover .flip-card-inner-container {
-    transform: rotateX(180deg);
+    transform: rotateY(180deg);
   }
 
   /* Front and back of card joint styling*/
@@ -431,8 +440,8 @@ article {
     background-image: url(https://i.pinimg.com/736x/eb/7b/10/eb7b10a9252c3d5efe912b6112654508.jpg);
     /* text color = white */
     color: #fff;
-    /* set back or card to initial 180deg rotation (i.e. back side starts facing away) */
-    transform: rotateX(180deg);
+    /* set back or card to initial 180deg rotation on Y axis (i.e. back side starts facing away) */
+    transform: rotateY(180deg);
     /* set character thickness */
     font-weight: bolder;
     /* set font-size */
@@ -445,27 +454,22 @@ article {
 */
 
 
-/* 8.  */
+/* 8. EXPLOSION */
 
-
-.class8-container {
+/* Main container */
+.explosion-container {
     box-sizing: border-box;
     font-size: 1rem;
-    background-size: 200% 100%;
     padding: 0 2rem;
-    /* background: */
-        linear-gradient(red, transparent),
-        linear-gradient(to top left, lime, transparent),
-        linear-gradient(to top right, blue, transparent);
-    background-blend-mode: screen;
-    animation: mid-gradient 3s infinite;
-    background-size: 200% 100%;
+    /* clip any overflow (elements passing container borders) during 'explosions' */
     overflow: hidden;
     display: flex;
+    /* Horizontally and vertically center 'words' in element */
     justify-content: center;
     align-items: center;
 }
 
+/*  */
 .letter {
     padding: 1em;
     box-sizing: border-box;

@@ -43,7 +43,7 @@ section {
 */
 
 
-/* Set default <article> height to 90% of viewport */
+/* Set default element height to 90% of viewport */
 article {
     height: 90vh;
 }
@@ -89,17 +89,17 @@ article {
     color: #000;
 }
 
-/* Set text colour to white on hover */
+/* Set text colour to white when parent container is hovered */
 .glow-pink-container:hover {
     color: #fff;
 }
 
-/* Set text to disappear over 5s duration on hover*/
+/* Set text to disappear over 5s duration when parent container is hovered*/
 .glow-pink-container:hover p {
     opacity: 0;
     transition: opacity 5s;
 }
-/* transition text opacity back to 1 over 5s duration off hover */
+/* transition text opacity back to 1 over 5s duration when parent container is no longer hovered */
 .glow-pink-container:not(:hover) p {
     transition: opacity 5s;
 }
@@ -125,7 +125,9 @@ article {
 
 */
 
+/* 2. DISAPPEAR */
 
+/* Main container */
 .disappear-container {
     display: flex;
     flex-direction: column;
@@ -142,20 +144,24 @@ article {
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
+    /* Transition opacity back to 1 over 5s duration off hover */
     opacity: 1;
     transition: opacity 5s;
 }
 
-.disappear-container:hover {
-    opacity: 0;
-    transition: opacity 1.5s;
-    transition-delay: 1s;
-}
-
+/* Strike through text and set text opacity to 0 over 3s duration after 1.5s delay when parent container is hovered */
 .disappear-container:hover p {
     text-decoration: line-through;
     opacity: 0;
-    transition: opacity 1.5s;
+    transition: opacity 3s;
+    transition-delay: 1.5s;
+}
+
+/* Set container opacity to 0 over 3s duration after 3s delay on hover */
+.disappear-container:hover {
+    opacity: 0;
+    transition: opacity 3s;
+    transition-delay: 3s;
 }
 
 
@@ -164,7 +170,10 @@ article {
 */
 
 
-.class3 {
+/* 3. BREATHE */
+
+/* Main container */
+.breathe-container {
     display: flex;
     flex-direction: column;
     padding: 1em;
@@ -176,24 +185,30 @@ article {
     border-radius:25%;
     font-size: 1rem;
     font-weight: bold;
+    /* Change font */
     font-family: 'Courier New', Courier, monospace;
+    /* Call animation SEE LINE 212 */
     animation: breathe 2.5s infinite;
 }
 
-.class3 p {
-    transform: translateY(0);
-    transition: transform 1.5s ease;
-}
-
-.class3:hover {
+/* Reduce font-weight when parent container is hovered */
+.breathe-container:hover {
     font-weight: 100;
 }
 
-.class3:hover p {
+/* Move text down by 50% of visual height - 1em ('- 1em' creates padding at bottom of container) over 2s duration and moving faster in middle of transition when parent container is hovered (ease (unstated because default)) */
+.breathe-container:hover p {
     transform: translateY(calc(50vh - 1em));
-    transition: transform 2s ease;
+    transition: transform 2s;
 }
 
+/* Return text to original position over 1.5s and moving faster in the middle when parent container is no longer hovered */
+.breathe-container p {
+    transform: translateY(0);
+    transition: transform 1.5s;
+}
+
+/* Define 'breathe' animation */
 @keyframes breathe {
     0% {
         border-radius: 25%;
@@ -207,31 +222,50 @@ article {
 }
 
 
-.class4 {
+/* 
+
+*/
+
+
+/* 4. GREYSCALE */
+
+/* Main container */
+.greyscale-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 3rem;
     box-sizing: border-box;
     font-size: 1rem;
+    /* Set background to image (from URL) */
     background-image: url(https://mfiles.alphacoders.com/100/1008760.png);
     background-size: cover;
     font-size: 1rem;
     font-weight: bolder;
     color: #fff;
+    /* Return greyscale effect to 0 and border-radius to original value over 1.5s duration and moving faster in middle of transition*/
     border-radius: 0%;
-    filter: grayscale(none);
-    transition: border-radius 1.5s ease, filter 1.5s ease;
+    filter: grayscale(0);
+    transition: border-radius 1.5s, filter 1.5s;
 }
 
-.class4:hover {
+/* Transition graycale effect to 100 and border radius values to (top-left and bottom-right 35%, top-right and bottom-left 15%) over 2.5s duration on hover (border-radius transition moves faster at start (ease-out)) */
+.greyscale-container:hover {
     filter: grayscale(100);
     border-radius: 35% 15%;
-    transition: filter 2.5s ease, border-radius 2.5s ease-out;
+    transition: filter 2.5s, border-radius 2.5s ease-out;
 }
 
 
-.class5 {
+/* 
+
+*/
+
+
+/* 5. NEON */
+
+/* Main container */
+.neon-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -246,39 +280,47 @@ article {
     font-weight: bold;
 }
 
-.class5:hover {
-    overflow: auto;
-    animation: mid-gradient 5s infinite;
+/* Set background size to twice width of element (shifts neon pink into bottom-right corner), increase contrast and saturation (create neon effect) on hover */
+.neon-container:hover {
     background-size: 200% 100%;
     filter: contrast(15);
     filter: saturate(4);
 }
 
-.class5:hover p:nth-child(1) {
+/* Create cascading text color change by delaying transition of each element by .5s > than previous sibling */
+.neon-container:hover p:nth-child(1) {
     color: #fff;
 }
-.class5:hover p:nth-child(2) {
+.neon-container:hover p:nth-child(2) {
     color: #fff;
     transition: color;
     transition-delay: 0.5s;
 }
-.class5:hover p:nth-child(3) {
+.neon-container:hover p:nth-child(3) {
     color: #fff;
     transition: color;
     transition-delay: 1s;
 }
-.class5:hover p:nth-child(4) {
+.neon-container:hover p:nth-child(4) {
     color: #fff;
     transition: color;
     transition-delay: 1.5s;
 }
-.class5:hover p:nth-child(5) {
+.neon-container:hover p:nth-child(5) {
     color: #fff;
     transition: color;
     transition-delay: 2s;
 }
 
 
+/* 
+
+*/
+
+
+/* 6. */
+
+/* Main container */
 .class6 {
     display: flex;
     flex-direction: column;

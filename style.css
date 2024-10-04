@@ -20,21 +20,18 @@ body {
 section {
     /* initialise grid */
     display: grid;
-    /* create responsive grid (maximum 2 columns, minimum column width 320px, share remaining space evenly between columns (i.e. respond to screen size)) */
-    grid-template-columns: repeat(2, minmax(320px, 1fr));
+    /* create responsive grid (maximum 1 column, minimum column width 320px, maximum wolumn width 33% vw) */
+    grid-template-columns: repeat(1, minmax(320px, 33%));
+    /* Center elements */
+    justify-content: center;
     /* space out grid elements */
-    gap: 2em;
+    gap: 10em;
     /* create space between elements and top/sides of screen */
     padding: 2em;
     /* centre text in elements */
     text-align: center;
-}
-
-/* force 1 column layout if screen width < 640px (to prevent overflow (because min column width 320px SEE LINE 23)) [the @media rule is used in media queries to apply different styles for different media types/devices. Media queries can be used to check many things, such as: width and height of the viewport, width and height of the device, orientation (is the tablet/phone in landscape or portrait mode?), resolution] */
-@media (max-width: 640px) {
-    section {
-        grid-template-columns: 1fr;
-    }
+    /* Set font-size */
+    font-size: 1rem;
 }
 
 
@@ -77,11 +74,9 @@ article {
     background-blend-mode: screen;
     /* slightly curve element edges */
     border-radius:1%;
-    /* set font size */
-    font-size: 1rem;
     /*  set character (text) thickness */
     font-weight: bold;
-    /* call animation SEE LINE 108 (params = name, duration, number of iterations */
+    /* call 'glow-pink' animation (LINE 103) (params = name, duration, number of iterations */
     animation: glow-pink 2.5s infinite;
     /* set background size to twice width of element (facilitates animation - creates glowing effect by moving background position repeatedly) */
     background-size: 200% 100%;
@@ -141,7 +136,6 @@ article {
         linear-gradient(to top right, #1d1f1e, transparent);
     background-blend-mode: screen;
     border-radius:1%;
-    font-size: 1rem;
     font-weight: bold;
     color: #fff;
     /* Transition opacity back to 1 over 5s duration off hover */
@@ -183,11 +177,10 @@ article {
         linear-gradient(to top right, #a5ffcb, transparent);
     background-blend-mode: screen;
     border-radius:25%;
-    font-size: 1rem;
     font-weight: bold;
     /* Change font */
     font-family: 'Courier New', Courier, monospace;
-    /* Call animation SEE LINE 212 */
+    /* Call 'breathe' animation (LINE 205) */
     animation: breathe 2.5s infinite;
 }
 
@@ -236,11 +229,9 @@ article {
     justify-content: space-between;
     padding: 3rem;
     box-sizing: border-box;
-    font-size: 1rem;
     /* Set background to image (from URL) */
     background-image: url(https://mfiles.alphacoders.com/100/1008760.png);
     background-size: cover;
-    font-size: 1rem;
     font-weight: bolder;
     color: #fff;
     /* Return greyscale effect to 0 and border-radius to original value over 1.5s duration and moving faster in middle of transition*/
@@ -276,7 +267,6 @@ article {
         linear-gradient(to top right, #1d1f1e, transparent);
     background-blend-mode: screen;
     border-radius: 3%;
-    font-size: 1rem;
     font-weight: bold;
 }
 
@@ -333,7 +323,6 @@ article {
     box-shadow: 0 0 0.5rem 0.6rem #fff;
     transition: border-radius 1.5s, box-shadow 4s;
 
-    font-size: 1rem;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bolder;
     /* 'Hide' element text */
@@ -445,8 +434,6 @@ article {
     transform: rotateY(180deg);
     /* set character thickness */
     font-weight: bolder;
-    /* set font-size */
-    font-size: 1rem;
   }
 
 
@@ -460,7 +447,6 @@ article {
 /* Main container */
 .explosion-container {
     box-sizing: border-box;
-    font-size: 1rem;
     padding: 0 2rem;
     /* clip any overflow (child elements passing parent container boundary) during 'explosions' */
     overflow: hidden;
@@ -468,7 +454,6 @@ article {
     display: flex;
     /* Horizontally and vertically center 'words' within element */
     justify-content: center;
-    
     align-items: center;
 }
 
@@ -499,7 +484,56 @@ article {
     background-color: #fff;
 }
 
-/* Name blocks for grid-template-areas reference (SEE LINE ..) */
+/* Set 'big-block' transitions to 1.5s duration and variable transition speed (cubic-bezier) */
+.big-block {
+    transition: 1.5s cubic-bezier(.12,.71,0,1);
+}
+
+/* Transform 'little-block' and 'big'block' elements on both X and Y axes when parent container is hovered */
+.letter:hover .lb-1 { transform: translate(-0.5rem,-2rem); }
+.letter:hover .lb-2 { transform: translate(-1rem,+1.5rem); }
+.letter:hover .lb-3 { transform: translate(+1.5rem,-1rem); }
+.letter:hover .lb-4 { transform: translate(+2rem,+0.5rem); }
+.letter:hover .bb-1 { transform: translate(-3.5rem,-3.5rem); }
+.letter:hover .bb-2 { transform: translate(-4rem,-3rem); }
+.letter:hover .bb-3 { transform: translate(-4.5rem,-2rem); }
+.letter:hover .bb-4 { transform: translate(-5rem,+1.5rem); }
+.letter:hover .bb-5 { transform: translate(+2rem,+2.5rem); }
+.letter:hover .bb-6 { transform: translate(+3rem,+3.5rem); }
+.letter:hover .bb-7 { transform: translate(+2rem,+2rem); }
+.letter:hover .bb-8 { transform: translate(+2.5rem,+2.5rem); }
+.letter:hover .bb-9 { transform: translate(+2.5rem,+1.5rem); }
+.letter:hover .bb-10 { transform: translate(+4rem,-2rem); }
+.letter:hover .bb-11 { transform: translate(+2.5rem,-3.5rem); }
+.letter:hover .bb-12 { transform: translate(+1.5rem,-5rem); }
+
+/* Change 'little-block' colour of first letter when parent container is hovered - repeat for second, third, fourth and fifth letters */
+.letter:nth-child(1):hover .little-block {
+    background-color: #ff1fb4;
+}
+.letter:nth-child(2):hover .little-block {
+    background-color: #ffb81f;
+}
+.letter:nth-child(3):hover .little-block {
+    background-color: #1fcbff;
+}
+.letter:nth-child(4):hover .little-block {
+    background-color: #a8b1b4;
+}
+.letter:nth-child(5):hover .little-block {
+    background-color: #adaf23;
+}
+/* transition 'little-block' elements background-color back to original value over 1.5s duration when parent container no longer hovered */
+.letter:not(:hover) .little-block {
+    transition: background-color 1s;
+}
+
+/* Add extra padding to 'Alone' container to acommodate longer word */
+.alone-container {
+    padding: 0 4rem;
+}
+
+/* Name blocks for grid-template-areas reference */
 .lb1 { 
     grid-area: lb-1;
 }
@@ -549,41 +583,7 @@ article {
     grid-area: bb-12;
 }
 
-/*  */
-.big-block {
-    transition: 1.5s cubic-bezier(.12,.71,0,1);
-}
-
-.letter:hover .lb-1 { transform: translate(-0.5rem,-2rem); }
-.letter:hover .lb-2 { transform: translate(-1rem,+1.5rem); }
-.letter:hover .lb-3 { transform: translate(+1.5rem,-1rem); }
-.letter:hover .lb-4 { transform: translate(+2rem,+0.5rem); }
-.letter:hover .bb-1 { transform: translate(-3.5rem,-3.5rem); }
-.letter:hover .bb-2 { transform: translate(-4rem,-3rem); }
-.letter:hover .bb-3 { transform: translate(-4.5rem,-2rem); }
-.letter:hover .bb-4 { transform: translate(-5rem,+1.5rem); }
-.letter:hover .bb-5 { transform: translate(+2rem,+2.5rem); }
-.letter:hover .bb-6 { transform: translate(+3rem,+3.5rem); }
-.letter:hover .bb-7 { transform: translate(+2rem,+2rem); }
-.letter:hover .bb-8 { transform: translate(+2.5rem,+2.5rem); }
-.letter:hover .bb-9 { transform: translate(+2.5rem,+1.5rem); }
-.letter:hover .bb-10 { transform: translate(+4rem,-2rem); }
-.letter:hover .bb-11 { transform: translate(+2.5rem,-3.5rem); }
-.letter:hover .bb-12 { transform: translate(+1.5rem,-5rem); }
-
-.letter:nth-child(1):hover .little-block {
-    background-color: #ff1fb4;
-}
-.letter:nth-child(2):hover .little-block {
-    background-color: #ffb81f;
-}
-.letter:nth-child(3):hover .little-block {
-    background-color: #1fcbff;
-}
-.letter:not(:hover) .little-block {
-    transition: background-color 1s;
-}
-
+/* Define individual letter grid-template-areas */
 .and-letter-a {
     grid-template-areas: 
         ". . bb-1 bb-2 . ."
@@ -682,10 +682,60 @@ article {
     ". . bb-8 . ."
     ". . bb-9 . .";
 }
+.alone-letter-a {
+    grid-template-areas: 
+        ". . bb-1 bb-2 . ."
+        ". bb-3 . . bb-4 ."
+        ". bb-5 bb-6 bb-7 bb-8 ."
+        ". bb-9 . . bb-10 ."
+        ". bb-11 . . bb-12 .";
+}
+.alone-letter-l {
+    grid-template-areas:
+    ". bb-1 . . . ."
+    ". bb-2 . . . ."
+    ". bb-3 . . . ."
+    ". bb-4 . . . ."
+    ". bb-5 bb-6 bb-7 bb-8 .";
+}
+.alone-letter-o {
+    grid-template-areas:
+    ". . bb-1 bb-2 . ."
+    ". bb-3 . . bb-4 ."
+    ". bb-5 . . bb-6 ."
+    ". bb-7 . . bb-8 ."
+    ". . bb-9 bb-10 . .";
+}
+.alone-letter-n {
+    grid-template-areas:
+    ". bb-1 . . bb-2 ."
+    ". bb-3 bb-4 . bb-5 ."
+    ". bb-6 . bb-7 bb-8 ."
+    ". bb-9 . . bb-10 ."
+    ". bb-11 . . bb-12 .";   
+}
+.alone-letter-e {
+    grid-template-areas:
+    ". bb-1 bb-2 bb-3 bb-4 ."
+    ". bb-5 . . . ."
+    ". bb-6 bb-7 . . ."
+    ". bb-8 . . . ."
+    ". bb-9 bb-10 bb-11 bb-12 .";
+}
 
+
+/* 
+
+*/
+
+/* Footer (github link) container */
 footer {
-     /* padding: ;
-    background-color: ;
-    border: ; */
+    font-size: 3em;
+    text-align: center;
+    padding: 10em 0;
+}
+/* Change github icon colour to white */
+footer a {
+    color: #fff;
 }
 

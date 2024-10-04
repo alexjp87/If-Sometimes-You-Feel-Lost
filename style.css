@@ -126,7 +126,7 @@ article {
 */
 
 
-.class2 {
+.disappear-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -146,13 +146,14 @@ article {
     transition: opacity 5s;
 }
 
-.class2:hover {
+.disappear-container:hover {
     opacity: 0;
     transition: opacity 1.5s;
     transition-delay: 1s;
 }
 
-.class2:hover p {
+.disappear-container:hover p {
+    text-decoration: line-through;
     opacity: 0;
     transition: opacity 1.5s;
 }
@@ -332,7 +333,7 @@ article {
     /* make transparent */
     background-color: transparent;
     /* set span of 3d rotation [the perspective property is used to give a 3D-positioned element some perspective - a lower value will result in a more intensive 3D effect than a higher value] */
-    perspective: 1000px;
+    perspective: 1200px;
     /* reduce element width */
     padding: 0.2em;
 }
@@ -349,7 +350,7 @@ article {
 
   /* When main container is hovered over, rotate inner container by 180 degrees on Y axis */
   .flip-card-container:hover .flip-card-inner-container {
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
   }
 
   /* Front and back of card joint styling*/
@@ -389,7 +390,7 @@ article {
     /* text color = white */
     color: #fff;
     /* set back or card to initial 180deg rotation (i.e. back side starts facing away) */
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
     /* set character thickness */
     font-weight: bolder;
     /* set font-size */
@@ -428,36 +429,10 @@ article {
     box-sizing: border-box;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(5, auto);
-    grid-template-areas: 
-        ". . bb-1 bb-2 . ."
-        ". bb-3 . . bb-4 ."
-        ". bb-5 bb-6 bb-7 bb-8 ."
-        ". bb-9 . . bb-10 ."
-        ". bb-11 . . bb-12 .";
     align-items: center;
     justify-items: center;
     height: 30%;
     width: 30%;
-}
-
-.letter:nth-child(2) {
-    grid-template-areas:
-        ". bb-1 . . bb-2 ."
-        ". bb-3 bb-4 . bb-5 ."
-        ". bb-6 . bb-7 bb-8 ."
-        ". bb-9 . . bb-10 ."
-        ". bb-11 . . bb-12 .";
-}
-
-.letter:nth-child(3) {
-    grid-template-areas:
-        ". bb-1 bb-2 bb-3 . ."
-        ". bb-4 . . bb-5 ."
-        ". bb-6 . . bb-7 ."
-        ". bb-8 . . bb-9 ."
-        ". bb-10 bb-11 bb-12 . .";
 }
 
 .big-block {
@@ -558,6 +533,59 @@ article {
 .class8-container:not(:hover) .letter .little-block {
     transition: background-color 2s;
 }
+
+.and-letter-a {
+    grid-template-areas: 
+        ". . bb-1 bb-2 . ."
+        ". bb-3 . . bb-4 ."
+        ". bb-5 bb-6 bb-7 bb-8 ."
+        ". bb-9 . . bb-10 ."
+        ". bb-11 . . bb-12 .";
+}
+.and-letter-n {
+    grid-template-areas:
+        ". bb-1 . . bb-2 ."
+        ". bb-3 bb-4 . bb-5 ."
+        ". bb-6 . bb-7 bb-8 ."
+        ". bb-9 . . bb-10 ."
+        ". bb-11 . . bb-12 .";
+}
+.and-letter-d {
+    grid-template-areas:
+        ". bb-1 bb-2 bb-3 . ."
+        ". bb-4 . . bb-5 ."
+        ". bb-6 . . bb-7 ."
+        ". bb-8 . . bb-9 ."
+        ". bb-10 bb-11 bb-12 . .";
+}
+
+.you-letter-y {
+    grid-template-areas: 
+    ". bb-1 . . . bb-2 ."
+    ". . bb-3 . bb-4 . ."
+    ". . . bb-5 . . ."
+    ". . . bb-6 . . ."
+    ". . . bb-7 . . .";
+}
+.you-letter-o {
+    grid-template-areas:
+    ". . bb-1 bb-2 . ."
+    ". bb-3 . . bb-4 ."
+    ". bb-5 . . bb-6 ."
+    ". bb-7 . . bb-8 ."
+    ". . bb-9 bb-10 . ."
+    ;
+}
+.you-letter-u {
+    grid-template-areas:
+    ". bb-1 . . bb-2 ."
+    ". bb-3 . . bb-4 ."
+    ". bb-5 . . bb-6 ."
+    ". bb-7 . . bb-8 ."
+    ". . bb-9 bb-10 . .";
+}
+
+
 
 footer {
      /* padding: ;

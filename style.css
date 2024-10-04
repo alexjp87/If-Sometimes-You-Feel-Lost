@@ -328,10 +328,11 @@ article {
     padding: 2em;
     box-sizing: border-box;
     border: solid 0.5rem #fff;
-    border-radius: 40%;
     /* Return border-radius and box-shadow blur and spread properties to original values over (border-radius 1.5s, box-shadow 4s) and moving faster in middle of transition */
+    border-radius: 40%;
     box-shadow: 0 0 0.5rem 0.6rem #fff;
     transition: border-radius 1.5s, box-shadow 4s;
+
     font-size: 1rem;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bolder;
@@ -461,19 +462,20 @@ article {
     box-sizing: border-box;
     font-size: 1rem;
     padding: 0 2rem;
-    /* clip any overflow (elements passing container borders) during 'explosions' */
+    /* clip any overflow (child elements passing parent container boundary) during 'explosions' */
     overflow: hidden;
+
     display: flex;
-    /* Horizontally and vertically center 'words' in element */
+    /* Horizontally and vertically center 'words' within element */
     justify-content: center;
+    
     align-items: center;
 }
 
-/*  */
+/* Letter container */
 .letter {
     padding: 1em;
     box-sizing: border-box;
-    height: 100%;
     display: grid;
     align-items: center;
     justify-items: center;
@@ -481,21 +483,23 @@ article {
     width: 30%;
 }
 
+/* Big blocks */
 .big-block {
 	height: 45%; width: 45%;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(2,1fr);
+    /* Layout little-blocks to form a square (i.e. form the big-block) */
     grid-template-areas: 
         "lb-1 lb-2"
         "lb-3 lb-4";
     padding: 0.5em;
 }
 
+/* Set blocks to white */
 .little-block {
     background-color: #fff;
 }
 
+/* Name blocks for grid-template-areas reference (SEE LINE ..) */
 .lb1 { 
     grid-area: lb-1;
 }
@@ -508,7 +512,6 @@ article {
 .lb4 {
     grid-area: lb-4;
 }
-
 .bb-1 {
     grid-area: bb-1;
 }
@@ -546,6 +549,7 @@ article {
     grid-area: bb-12;
 }
 
+/*  */
 .big-block {
     transition: 1.5s cubic-bezier(.12,.71,0,1);
 }

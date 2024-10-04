@@ -32,6 +32,10 @@ section {
     text-align: center;
     /* Set font-size */
     font-size: 1rem;
+    /* Set section border */
+    border: solid .25em white;
+    /* Create gap between border and screen edge */
+    margin: 3em;
 }
 
 
@@ -76,7 +80,7 @@ article {
     border-radius:1%;
     /*  set character (text) thickness */
     font-weight: bold;
-    /* call 'glow-pink' animation (LINE 103) (params = name, duration, number of iterations */
+    /* call 'glow-pink' animation (LINE 107) (params = name, duration, number of iterations */
     animation: glow-pink 2.5s infinite;
     /* set background size to twice width of element (facilitates animation - creates glowing effect by moving background position repeatedly) */
     background-size: 200% 100%;
@@ -180,7 +184,7 @@ article {
     font-weight: bold;
     /* Change font */
     font-family: 'Courier New', Courier, monospace;
-    /* Call 'breathe' animation (LINE 205) */
+    /* Call 'breathe' animation (LINE 209) */
     animation: breathe 2.5s infinite;
 }
 
@@ -732,7 +736,7 @@ article {
 footer {
     font-size: 3em;
     text-align: center;
-    padding: 10em 0;
+    padding: 5em 0;
 }
 /* Change github icon colour to white */
 footer a {

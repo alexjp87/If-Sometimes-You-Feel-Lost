@@ -573,8 +573,7 @@ article {
     ". bb-3 . . bb-4 ."
     ". bb-5 . . bb-6 ."
     ". bb-7 . . bb-8 ."
-    ". . bb-9 bb-10 . ."
-    ;
+    ". . bb-9 bb-10 . .";
 }
 .you-letter-u {
     grid-template-areas:
@@ -607,10 +606,32 @@ article {
     ". bb-5 . . . ."
     ". bb-6 bb-7 . . ."
     ". bb-8 . . . ."
-    ". bb-9 bb-10 bb-11 bb-12 ."
-    ;
+    ". bb-9 bb-10 bb-11 bb-12 .";
 }
-
+.not-letter-n {
+    grid-template-areas:
+    ". bb-1 . . bb-2 ."
+    ". bb-3 bb-4 . bb-5 ."
+    ". bb-6 . bb-7 bb-8 ."
+    ". bb-9 . . bb-10 ."
+    ". bb-11 . . bb-12 .";   
+}
+.not-letter-o {
+    grid-template-areas:
+    ". . bb-1 bb-2 . ."
+    ". bb-3 . . bb-4 ."
+    ". bb-5 . . bb-6 ."
+    ". bb-7 . . bb-8 ."
+    ". . bb-9 bb-10 . .";
+}
+.not-letter-t {
+    grid-template-areas:
+    "bb-1 bb-2 bb-3 bb-4 bb-5"
+    ". . bb-6 . ."
+    ". . bb-7 . ."
+    ". . bb-8 . ."
+    ". . bb-9 . .";
+}
 
 footer {
      /* padding: ;

@@ -35,7 +35,7 @@ section {
     /* Set section border */
     border: solid .25em white;
     /* Create gap between border and screen edge */
-    margin: 3em;
+    margin: 1em;
 }
 
 

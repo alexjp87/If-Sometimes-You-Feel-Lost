@@ -534,7 +534,7 @@ article {
 
 /* Add extra padding to 'Alone' container to acommodate longer word */
 .alone-container {
-    padding: 0 4rem;
+    padding: 0 3rem;
 }
 
 /* Name blocks for grid-template-areas reference */
